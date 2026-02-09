@@ -1,0 +1,111 @@
+.section {
+  background: #fcfbf9;
+  padding: 3rem 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 680px; /* match Men section on desktop */
+}
+
+.header {
+  text-align: left;
+  max-width: 720px;
+  margin-bottom: 1.5rem;
+}
+
+.headline {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.75rem, 3.6vw, 2.6rem);
+  color: #191414;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.05;
+}
+
+.copy {
+  font-family: "Inter", sans-serif;
+  color: #4b433c;
+  font-weight: 300;
+  margin: 0 0 1.25rem 0;
+}
+
+.accent {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(201,168,118,0.9), rgba(139,115,85,0.9));
+  opacity: 0.7;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.tile {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.tile img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 6px 22px rgba(32, 26, 23, 0.06);
+}
+
+/* Tile placements for an airy, asymmetric composition */
+.tileLarge {
+  grid-column: 1 / span 5;
+}
+
+.tileSmall {
+  grid-column: 6 / span 2;
+}
+
+.tileFloating {
+  grid-column: 8 / span 3;
+  transform: translateY(24px);
+}
+
+.tileMedium {
+  grid-column: 1 / span 3;
+}
+
+.tileSmall2 {
+  grid-column: 4 / span 3;
+}
+
+.tileMedium2 {
+  grid-column: 7 / span 4;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .section { padding: 3rem 1rem; }
+  .gallery { grid-template-columns: repeat(8, 1fr); }
+  .tileLarge { grid-column: 1 / span 4; }
+  .tileSmall { grid-column: 5 / span 2; }
+  .tileFloating { grid-column: 5 / span 3; transform: translateY(12px); }
+  .tileMedium { grid-column: 1 / span 4; }
+  .tileSmall2 { grid-column: 1 / span 4; }
+  .tileMedium2 { grid-column: 1 / span 8; }
+  .container { min-height: auto; }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 2rem 0.6rem; }
+  .header { text-align: center; margin-bottom: 1.2rem; }
+  .gallery { grid-template-columns: 1fr; gap: 0.8rem; }
+  .tileLarge, .tileSmall, .tileFloating, .tileMedium, .tileSmall2, .tileMedium2 { grid-column: auto; transform: none; }
+}

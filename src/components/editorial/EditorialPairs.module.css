@@ -1,0 +1,184 @@
+.section {
+  background: #fbfaf8;
+  padding: 5rem 1rem;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: #161412;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-family: "Inter", sans-serif;
+  color: #5a4f45;
+  margin: 0 0 1.25rem 0;
+  font-weight: 300;
+}
+
+.outerSwiper {
+  padding-bottom: 1.5rem;
+}
+
+.cardSlide {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(24, 20, 18, 0.06);
+  border: 1px solid rgba(20, 16, 13, 0.04);
+}
+
+.innerSwiperWrap {
+  width: 100%;
+  height: 100%;
+}
+
+.innerSwiper {
+  width: 100%;
+}
+
+.innerSlide {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.innerSlide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* When inner Swiper shows 2 slides side-by-side, add divider */
+.innerSwiper .swiper-slide:not(:last-child) img {
+  border-right: 1px solid rgba(200, 200, 190, 0.55);
+}
+
+/* Make inner slides equal height */
+.innerSwiper .swiper-wrapper {
+  display: flex;
+}
+
+/* Responsive card sizing */
+@media (max-width: 1024px) {
+  .card { max-width: 360px; }
+}
+
+@media (max-width: 768px) {
+  .card { max-width: 520px; }
+  .innerSlide img { object-fit: contain; }
+}
+
+@media (max-width: 420px) {
+  .card { max-width: 320px; }
+}
+
+/* Comparison slider styles */
+.comparisonWrap {
+  width: 100%;
+  height: 360px;
+}
+
+.comparison {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  display: block;
+}
+
+.comparison img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.baseImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.reveal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.revealImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(200,200,190,0.9), rgba(220,220,210,0.7));
+}
+
+.handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 6px 18px rgba(20,16,13,0.08);
+  border: 1px solid rgba(200,190,170,0.5);
+  cursor: ew-resize;
+}
+
+.handle .arrow {
+  font-size: 18px;
+  color: #6b635b;
+  line-height: 1;
+  padding: 0 2px;
+}
+
+/* Make divider follow the left percentage by translating the handle container */
+.divider { pointer-events: auto; }
+.handle { pointer-events: auto; }
+
+@media (max-width: 1024px) {
+  .comparisonWrap { height: 320px; }
+}
+
+@media (max-width: 640px) {
+  .comparisonWrap { height: 260px; }
+}

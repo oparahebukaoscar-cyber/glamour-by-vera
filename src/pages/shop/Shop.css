@@ -1,0 +1,271 @@
+.shop-page {
+  background: white;
+  padding: 80px 60px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+.shop-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.shop-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  color: #ff69b4;
+  margin-bottom: 10px;
+}
+
+.shop-header p {
+  color: #0b2c5d;
+  font-size: 16px;
+}
+
+/* Section headings and subtext (editorial-style) */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem; /* ~36.8px */
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-align: center;
+  margin: 0 0 18px 0;
+  color: #0b2c5d;
+}
+
+.section-sub {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  max-width: 760px;
+  margin: 0 auto 28px auto;
+  text-align: center;
+  line-height: 1.45;
+}
+
+.section-title.spacing {
+  margin-top: 56px;
+}
+
+/* GRID */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+
+/* CARD */
+.product-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* subtle press feedback for add-to-cart */
+.add-to-cart:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* fade-in animation for initial load */
+.fade-in {
+  animation: fadeInUp 560ms ease both;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ensure equal-height cards and vertical layout */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+}
+
+/* IMAGE */
+.image-wrapper,
+.image-box {
+  width: 100%;
+  overflow: hidden;
+  flex: none;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f7f7;
+}
+
+.image-wrapper img,
+.image-box img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  background: #f7f7f7;
+}
+
+/* INFO */
+.product-info {
+  padding: 18px 18px 22px;
+}
+
+.product-info {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.product-info h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* RATING */
+.rating {
+  font-size: 13px;
+  color: #ffb703;
+  margin-bottom: 12px;
+}
+
+.rating span {
+  color: #777;
+}
+
+/* FOOTER */
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* CTA */
+.add-to-cart {
+  color: #fff;
+  background: #000;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.add-to-cart:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+}
+
+.product-name {
+  font-size: 15px;
+  margin: 0 0 8px 0;
+  color: #0b2c5d;
+  font-weight: 600;
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.price {
+  font-weight: 700;
+  color: #111;
+}
+
+/* Stars - base gray (empty) and yellow filled via pseudo element width controlled by rating classes */
+.stars {
+  --star-size: 20px;
+  width: calc(var(--star-size) * 5);
+  height: var(--star-size);
+  display: inline-block;
+  position: relative;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polygon fill='%23c4c4c4' points='12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21'/></svg>");
+  background-repeat: repeat-x;
+  background-size: var(--star-size) var(--star-size);
+}
+
+.stars::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polygon fill='%23ffb703' points='12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21'/></svg>");
+  background-repeat: repeat-x;
+  background-size: var(--star-size) var(--star-size);
+  pointer-events: none;
+}
+
+.rating-0::before { width: 0%; }
+.rating-1::before { width: 20%; }
+.rating-2::before { width: 40%; }
+.rating-3::before { width: 60%; }
+.rating-4::before { width: 80%; }
+.rating-5::before { width: 100%; }
+
+/* CSS-based star rating using SVG backgrounds (5 stars shown always).
+   Use the custom property --rating (0-5) on .stars to control fill.
+*/
+.stars {
+  --rating: 5;
+  width: 110px; /* 5 * 22px per star */
+  height: 22px;
+  display: inline-block;
+  position: relative;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polygon fill='%23c4c4c4' points='12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21'/></svg>");
+  background-repeat: repeat-x;
+  background-size: 22px 22px;
+}
+
+.stars::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: calc(var(--rating) / 5 * 100%);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polygon fill='%23ffb703' points='12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21'/></svg>");
+  background-repeat: repeat-x;
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
+.product-info .stars {
+  margin-bottom: 12px;
+}
+
+/* Toast / snackbar */
+.shop-toast {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  background: rgba(17,17,17,0.96);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  font-size: 13px;
+  z-index: 60;
+}

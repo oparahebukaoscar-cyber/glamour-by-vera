@@ -1,0 +1,71 @@
+/* Cart page visual updates aligned with Home design system */
+:root{
+  --leather-brown: #3a2a1f;
+  --beige-1: #f5f1eb;
+  --beige-2: #ffffff;
+}
+
+.page {
+  background: linear-gradient(to bottom, var(--beige-1), var(--beige-2));
+  padding: 80px 6%;
+  color: var(--leather-brown);
+}
+
+.heading {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: var(--leather-brown);
+  letter-spacing: 1px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.productImage {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.details {
+  flex: 1;
+}
+
+.qtyButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: var(--leather-brown);
+  color: #fff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.summary {
+  background: #f5efe6;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+
+.checkoutBtn {
+  background: var(--leather-brown);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}

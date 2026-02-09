@@ -1,0 +1,71 @@
+/* Luxury booking page styles aligned with Home design system */
+:root{
+  --leather-brown: #3a2a1f;
+  --beige-1: #f5f1eb;
+  --beige-2: #ffffff;
+  --card-bg: #ffffff;
+}
+
+.page {
+  background: linear-gradient(to bottom, var(--beige-1), var(--beige-2));
+  padding: 80px 6%;
+  color: var(--leather-brown);
+}
+
+.heading {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: var(--leather-brown);
+  letter-spacing: 1px;
+  font-size: 2.1rem;
+  margin-bottom: 1rem;
+}
+
+.formCard {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  padding: 32px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  background: #faf8f5;
+  border: 1px solid #e5dfd7;
+  border-radius: 999px;
+  color: var(--leather-brown);
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.input:focus {
+  border-color: var(--leather-brown);
+  box-shadow: 0 6px 18px rgba(58,42,31,0.06);
+}
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 24px;
+  background: var(--leather-brown);
+  color: #fff;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: filter 160ms ease, transform 160ms ease;
+}
+
+.btn:hover {
+  filter: brightness(1.06);
+  transform: translateY(-2px);
+}
+
+.subheading {
+  text-align: center;
+  color: #6a584b;
+  margin-bottom: 1.5rem;
+}

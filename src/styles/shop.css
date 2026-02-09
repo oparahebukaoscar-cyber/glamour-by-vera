@@ -1,0 +1,82 @@
+.shop-page {
+  background-color: white;
+  padding: 70px 50px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.shop-title {
+  font-family: 'Playfair Display', serif;
+  color: #ff69b4;
+  font-size: 42px;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.shop-subtitle {
+  color: #0b2c5d;
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.product-box {
+  position: relative;
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+
+  /* POP-OUT FRAME */
+  border: 3px solid rgba(255, 105, 180, 0.8);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.product-box:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.65)
+  );
+  z-index: 1;
+}
+
+.product-content {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  z-index: 2;
+  text-align: left;
+  color: white;
+}
+
+.product-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.product-content p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+}
